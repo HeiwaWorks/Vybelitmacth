@@ -1,0 +1,778 @@
+
+/* =====================================
+   VOICECHAT - MAIN STYLE
+===================================== */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    color-scheme: dark;
+
+    --bg: #171923;
+    --panel: #202331;
+    --panel2: #272b3c;
+    --line: #34394d;
+
+    --text: #f4f5fb;
+    --muted: #969caf;
+
+    --blue: #829cff;
+    --purple: #b29aff;
+    --green: #66dfb2;
+    --red: #f07178;
+}
+
+body {
+    min-height: 100vh;
+    background:
+        radial-gradient(
+            ellipse at 50% -15%,
+            #303653 0,
+            transparent 48%
+        ),
+        var(--bg);
+
+    font-family: "DM Sans", sans-serif;
+    color: var(--text);
+}
+
+button,
+input {
+    font: inherit;
+}
+
+button {
+    cursor: pointer;
+}
+
+/* =====================================
+   MAIN LAYOUT
+===================================== */
+
+.shell {
+    width: min(100% - 36px, 900px);
+    min-height: 100vh;
+    margin: auto;
+
+    display: flex;
+    flex-direction: column;
+}
+
+/* =====================================
+   HEADER
+===================================== */
+
+.topbar {
+    height: 82px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    border-bottom: 1px solid #ffffff0d;
+}
+
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 11px;
+
+    color: var(--text);
+    font-size: 19px;
+    font-weight: 800;
+    letter-spacing: -0.7px;
+
+    text-decoration: none;
+}
+
+.brand-mark {
+    width: 34px;
+    height: 34px;
+
+    display: grid;
+    place-items: center;
+
+    border-radius: 11px;
+
+    background: linear-gradient(
+        135deg,
+        var(--purple),
+        var(--blue)
+    );
+
+    color: #171923;
+    font-weight: 900;
+}
+
+.brand-light {
+    color: var(--blue);
+    font-weight: 500;
+}
+
+.prototype-tag {
+    font-size: 10px;
+    letter-spacing: 1.5px;
+
+    color: #aeb5c9;
+
+    border: 1px solid #41475e;
+    padding: 8px 11px;
+
+    border-radius: 30px;
+}
+
+.prototype-tag i {
+    display: inline-block;
+
+    width: 7px;
+    height: 7px;
+
+    border-radius: 50%;
+
+    background: var(--green);
+    margin-right: 7px;
+
+    box-shadow: 0 0 12px #66dfb277;
+}
+
+/* =====================================
+   HOME PAGE
+===================================== */
+
+.home-view {
+    width: min(100%, 520px);
+    margin: 70px auto 30px;
+}
+
+/* HERO */
+
+.hero {
+    text-align: center;
+    margin-bottom: 34px;
+}
+
+.eyebrow {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    color: var(--blue);
+}
+
+.eyebrow-line {
+    display: inline-block;
+
+    width: 22px;
+    height: 1px;
+
+    background: var(--blue);
+
+    vertical-align: middle;
+    margin-right: 8px;
+}
+
+.hero h1 {
+    font-size: clamp(38px, 8vw, 58px);
+    line-height: 1.04;
+    letter-spacing: -2.8px;
+
+    margin: 18px 0 14px;
+}
+
+.hero h1 span {
+    background: linear-gradient(
+        90deg,
+        #a9b7ff,
+        #c5aaff
+    );
+
+    background-clip: text;
+    color: transparent;
+}
+
+.hero-copy {
+    color: var(--muted);
+    font-size: 14px;
+    line-height: 1.7;
+
+    max-width: 390px;
+    margin: auto;
+}
+
+/* =====================================
+   JOIN CARD
+===================================== */
+
+.join-card,
+.room-panel {
+    background: linear-gradient(
+        145deg,
+        #242838,
+        #1e2230
+    );
+
+    border: 1px solid #ffffff12;
+    border-radius: 20px;
+
+    box-shadow: 0 22px 70px #0003;
+}
+
+.join-card {
+    padding: 27px;
+}
+
+.card-heading {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    margin-bottom: 26px;
+}
+
+.card-heading h2 {
+    font-size: 20px;
+    margin: 7px 0 0;
+    letter-spacing: -0.5px;
+}
+
+.mini-label {
+    font-size: 9px;
+    color: #858da7;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+.mic-symbol {
+    width: 43px;
+    height: 43px;
+
+    display: grid;
+    place-items: center;
+
+    border-radius: 14px;
+
+    background: #849cff1b;
+    color: var(--blue);
+
+    font-size: 30px;
+}
+
+label {
+    display: block;
+
+    font-size: 12px;
+    color: #c5cada;
+
+    margin-bottom: 9px;
+}
+
+input {
+    width: 100%;
+    height: 48px;
+
+    background: #171a26;
+
+    border: 1px solid #383e53;
+    border-radius: 10px;
+
+    padding: 0 14px;
+
+    color: var(--text);
+    outline: none;
+
+    transition: 0.2s;
+}
+
+input:focus {
+    border-color: var(--blue);
+    box-shadow: 0 0 0 3px #829cff18;
+}
+
+input::placeholder {
+    color: #697188;
+}
+
+/* =====================================
+   BUTTONS
+===================================== */
+
+.primary-btn,
+.secondary-btn,
+.invite-btn {
+    border: 0;
+    border-radius: 10px;
+
+    font-weight: 700;
+
+    transition:
+        transform 0.18s,
+        filter 0.18s;
+}
+
+.primary-btn {
+    width: 100%;
+    height: 49px;
+
+    margin-top: 14px;
+
+    background: linear-gradient(
+        100deg,
+        #9eabff,
+        #b59aff
+    );
+
+    color: #171923;
+}
+
+.primary-btn span {
+    font-size: 19px;
+    vertical-align: -1px;
+    margin-right: 6px;
+}
+
+.primary-btn:hover,
+.secondary-btn:hover,
+.invite-btn:hover {
+    filter: brightness(1.08);
+    transform: translateY(-1px);
+}
+
+.primary-btn:disabled,
+.secondary-btn:disabled {
+    opacity: 0.6;
+    cursor: wait;
+    transform: none;
+}
+
+/* =====================================
+   JOIN WITH CODE
+===================================== */
+
+.or-divider {
+    display: flex;
+    align-items: center;
+    gap: 11px;
+
+    margin: 23px 0;
+
+    color: #858da2;
+    font-size: 11px;
+
+    white-space: nowrap;
+}
+
+.or-divider span {
+    height: 1px;
+    background: #363b4e;
+    flex: 1;
+}
+
+.join-row {
+    display: flex;
+    gap: 9px;
+}
+
+.join-row input {
+    min-width: 0;
+}
+
+.secondary-btn {
+    padding: 0 19px;
+
+    background: #34394d;
+    color: #e9ebf5;
+}
+
+.error-message {
+    min-height: 16px;
+
+    margin: 10px 0 0;
+
+    color: #ff8d94;
+    font-size: 12px;
+}
+
+.privacy-note {
+    text-align: center;
+
+    color: #858da2;
+    font-size: 11px;
+
+    margin-top: 19px;
+}
+
+.privacy-note span {
+    color: var(--green);
+    margin-right: 5px;
+}
+
+/* =====================================
+   VOICE ROOM
+===================================== */
+
+.room-view {
+    width: min(100%, 720px);
+    margin: 55px auto 35px;
+}
+
+.hidden {
+    display: none !important;
+}
+
+.room-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 16px;
+    margin-bottom: 24px;
+}
+
+.room-kicker {
+    font-size: 9px;
+    color: var(--blue);
+}
+
+.live-dot {
+    display: inline-block;
+
+    width: 7px;
+    height: 7px;
+
+    border-radius: 50%;
+
+    background: var(--green);
+    margin-right: 7px;
+
+    box-shadow: 0 0 12px #66dfb277;
+}
+
+.room-header h1 {
+    font-size: 30px;
+    letter-spacing: -1px;
+    margin: 8px 0 4px;
+}
+
+.room-header p {
+    font-size: 12px;
+    color: var(--muted);
+    margin: 0;
+}
+
+/* INVITE BUTTON */
+
+.invite-btn {
+    height: 42px;
+    padding: 0 15px;
+
+    background: #333a55;
+    color: #dce2ff;
+
+    font-size: 12px;
+}
+
+/* =====================================
+   PARTICIPANTS
+===================================== */
+
+.room-panel {
+    padding: 22px;
+    min-height: 260px;
+}
+
+.panel-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    color: #9da5bc;
+
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 1.4px;
+}
+
+.count-pill {
+    background: #343a50;
+    color: #c9d2ff;
+
+    padding: 6px 9px;
+
+    border-radius: 20px;
+
+    letter-spacing: 0;
+    font-size: 10px;
+}
+
+.participant-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(auto-fit, minmax(135px, 1fr));
+
+    gap: 12px;
+    margin-top: 22px;
+}
+
+.person-card {
+    position: relative;
+
+    min-height: 142px;
+
+    background: #292e40;
+
+    border: 1px solid #ffffff0b;
+    border-radius: 15px;
+
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 8px;
+    padding: 14px;
+
+    transition: 0.2s;
+}
+
+.person-card.speaking {
+    border-color: #66dfb2a8;
+
+    box-shadow:
+        0 0 0 2px #66dfb21a,
+        0 0 25px #66dfb21a;
+}
+
+.avatar {
+    width: 53px;
+    height: 53px;
+
+    border-radius: 18px;
+
+    display: grid;
+    place-items: center;
+
+    background: linear-gradient(
+        135deg,
+        #8d9fff,
+        #bd9aff
+    );
+
+    color: #171923;
+
+    font-size: 20px;
+    font-weight: 800;
+}
+
+.person-name {
+    font-size: 12px;
+    font-weight: 700;
+
+    max-width: 100%;
+
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.person-state {
+    font-size: 10px;
+    color: #9ba3b8;
+}
+
+.person-state.talking {
+    color: var(--green);
+}
+
+.room-status {
+    text-align: center;
+
+    color: #8f98b0;
+    font-size: 11px;
+
+    margin-top: 19px;
+}
+
+/* =====================================
+   VOICE CONTROLS
+===================================== */
+
+.controls {
+    display: flex;
+    justify-content: center;
+
+    gap: 13px;
+    margin: 25px 0 13px;
+}
+
+.control-btn {
+    min-width: 91px;
+    height: 75px;
+
+    border: 1px solid #3a4056;
+    border-radius: 15px;
+
+    background: #292e40;
+    color: #e8eaf4;
+
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 5px;
+
+    font-size: 10px;
+
+    transition: 0.2s;
+}
+
+.control-btn:hover:not(:disabled) {
+    background: #383e55;
+    transform: translateY(-2px);
+}
+
+.control-btn:disabled {
+    opacity: 0.45;
+    cursor: not-allowed;
+}
+
+.control-icon {
+    font-size: 21px;
+}
+
+.control-btn.active {
+    background: #4a3442;
+    border-color: #89536a;
+    color: #ffb4bf;
+}
+
+.leave-btn {
+    background: #a93e51;
+    border-color: #a93e51;
+    color: white;
+
+    min-width: 100px;
+}
+
+.leave-btn:hover:not(:disabled) {
+    background: #c34a5f;
+}
+
+.room-footnote {
+    text-align: center;
+    color: #777f95;
+    font-size: 10px;
+}
+
+/* =====================================
+   FOOTER
+===================================== */
+
+footer {
+    margin: auto 0 0;
+    padding: 24px 0 20px;
+
+    text-align: center;
+
+    color: #626a80;
+    font-size: 9px;
+    letter-spacing: 2px;
+}
+
+footer span {
+    color: var(--blue);
+    padding: 0 5px;
+}
+
+/* =====================================
+   TOAST NOTIFICATION
+===================================== */
+
+.toast {
+    position: fixed;
+
+    left: 50%;
+    bottom: 25px;
+
+    transform: translate(-50%, 20px);
+    opacity: 0;
+
+    pointer-events: none;
+
+    background: #e9ecff;
+    color: #202437;
+
+    padding: 11px 17px;
+
+    border-radius: 10px;
+
+    font-size: 12px;
+    font-weight: 700;
+
+    transition: 0.25s;
+
+    box-shadow: 0 8px 30px #0005;
+    z-index: 100;
+}
+
+.toast.show {
+    opacity: 1;
+    transform: translate(-50%, 0);
+}
+
+/* =====================================
+   RESPONSIVE MOBILE
+===================================== */
+
+@media (max-width: 520px) {
+
+    .shell {
+        width: min(100% - 26px, 900px);
+    }
+
+    .topbar {
+        height: 68px;
+    }
+
+    .home-view {
+        margin-top: 55px;
+    }
+
+    .join-card {
+        padding: 21px;
+    }
+
+    .room-view {
+        margin-top: 38px;
+    }
+
+    .room-panel {
+        padding: 16px;
+    }
+
+    .room-header h1 {
+        font-size: 25px;
+    }
+
+    .invite-btn {
+        padding: 0 11px;
+    }
+
+    .invite-btn span {
+        font-size: 11px;
+    }
+
+    .controls {
+        gap: 8px;
+    }
+
+    .control-btn {
+        min-width: 82px;
+    }
+}

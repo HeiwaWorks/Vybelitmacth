@@ -1,0 +1,193 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#171923">
+    <meta name="description" content="Private Voice Chat">
+    
+    <title>VoiceChat — Talk Together</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/style.css">
+
+    <script type="module" src="js/script.js"></script>
+</head>
+<body>
+
+    <main class="shell">
+
+        <!-- HEADER -->
+        <header class="topbar">
+            <a class="brand" href="/">
+                <span class="brand-mark">V</span>
+                <span>voice<span class="brand-light">chat</span></span>
+            </a>
+
+            <span class="prototype-tag">
+                <i></i> PROTOTYPE
+            </span>
+        </header>
+
+        <!-- HOME PAGE -->
+        <section id="homeView" class="home-view">
+
+            <div class="hero">
+                <div class="eyebrow">
+                    <span class="eyebrow-line"></span>
+                    YOUR SPACE, YOUR VOICE
+                </div>
+
+                <h1>
+                    Good conversations<br>
+                    <span>start here.</span>
+                </h1>
+
+                <p class="hero-copy">
+                    Buat ruang suara pribadi dan ajak temanmu
+                    bergabung lewat satu link.
+                </p>
+            </div>
+
+            <!-- CREATE ROOM -->
+            <section class="join-card">
+
+                <div class="card-heading">
+                    <div>
+                        <span class="mini-label">LET'S GET STARTED</span>
+                        <h2>Masuk ke voice room</h2>
+                    </div>
+
+                    <div class="mic-symbol">⌁</div>
+                </div>
+
+                <label for="displayName">Nama kamu</label>
+
+                <input
+                    id="displayName"
+                    type="text"
+                    maxlength="32"
+                    autocomplete="nickname"
+                    placeholder="Contoh: Medz"
+                >
+
+                <button id="createBtn" class="primary-btn">
+                    <span>＋</span> Buat room baru
+                </button>
+
+                <div class="or-divider">
+                    <span></span>
+                    atau gabung dengan link
+                    <span></span>
+                </div>
+
+                <div class="join-row">
+                    <input
+                        id="roomCode"
+                        type="text"
+                        maxlength="64"
+                        placeholder="Masukkan kode room"
+                    >
+
+                    <button id="joinBtn" class="secondary-btn">
+                        Gabung
+                    </button>
+                </div>
+
+                <p id="homeError" class="error-message" role="alert"></p>
+
+            </section>
+
+            <p class="privacy-note">
+                <span>♢</span>
+                Browser akan meminta izin mikrofon saat kamu bergabung.
+            </p>
+
+        </section>
+
+        <!-- VOICE ROOM PAGE -->
+        <section id="roomView" class="room-view hidden">
+
+            <div class="room-header">
+
+                <div>
+                    <div class="room-kicker">
+                        <span class="live-dot"></span>
+                        VOICE ROOM
+                    </div>
+
+                    <h1 id="roomTitle">Voice Room</h1>
+
+                    <p id="roomSubtitle">
+                        Terhubung dengan temanmu
+                    </p>
+                </div>
+
+                <button id="copyInviteBtn" class="invite-btn">
+                    ↗ <span>Undang teman</span>
+                </button>
+
+            </div>
+
+            <!-- PARTICIPANTS -->
+            <div class="room-panel">
+
+                <div class="panel-top">
+                    <span>PEOPLE IN THIS ROOM</span>
+
+                    <span id="participantCount" class="count-pill">
+                        0 / 5
+                    </span>
+                </div>
+
+                <div id="participantGrid" class="participant-grid"></div>
+
+                <div id="roomStatus" class="room-status">
+                    Menghubungkan ke room...
+                </div>
+
+            </div>
+
+            <!-- VOICE CONTROLS -->
+            <div class="controls">
+
+                <button id="micBtn" class="control-btn" disabled>
+                    <span class="control-icon">🎙</span>
+                    <span>Mute</span>
+                </button>
+
+                <button id="deafenBtn" class="control-btn" disabled>
+                    <span class="control-icon">🎧</span>
+                    <span>Deafen</span>
+                </button>
+
+                <button id="leaveBtn" class="control-btn leave-btn">
+                    <span class="control-icon">☎</span>
+                    <span>Leave</span>
+                </button>
+
+            </div>
+
+            <p class="room-footnote">
+                Jangan tutup tab selama kamu masih ingin berada di room.
+            </p>
+
+        </section>
+
+        <!-- FOOTER -->
+        <footer>
+            VOICECHAT <span>•</span> EXPERIMENTAL BUILD 01
+        </footer>
+
+    </main>
+
+    <!-- TOAST -->
+    <div id="toast" class="toast" role="status"></div>
+
+</body>
+</html>
